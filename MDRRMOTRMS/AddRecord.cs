@@ -59,11 +59,21 @@ namespace MDRRMOTRMS
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            //Update Data
             con.Open();
-            OleDbCommand cmd = new OleDbCommand
-                (
-                    "Update tbl_trms set Firstname='"+txtFirstname.Text+ "',Lastname='" + txtLastname.Text + "',Birthday='" + dateTimePicker1.Text + "',ContactNum='" + txtContactNum.Text + "',Barangay='" + cmbBarangay.Text + "',Category='" + cmbCategory.Text + "',TrainingAcquired='" + cmbTrainings.Text + "',YearAcquired='" + txtYear.Text + "',TrainingVenue='" + txtVenue.Text + "', where ID=" + txtSearch.Text + " ", con
-                );
+            string query = "UPDATE tbl_trms SET Firstname = @firstname, Lastname = @lastname, Birthday = @bday, ContactNum = @contactnum, Barangay = @barangay, Category = @category, TrainingAcquired = @training, YearAcquired = @year, TrainingVenue = @venue WHERE [ID] = "+txtSearch.Text+" ";
+            OleDbCommand cmd = new OleDbCommand(query, con);
+
+            cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text);
+            cmd.Parameters.AddWithValue("@lastname", txtLastname.Text);
+            cmd.Parameters.AddWithValue("@bday", dateTimePicker1.Value.ToString());
+            cmd.Parameters.AddWithValue("@contactnum", txtContactNum.Text);
+            cmd.Parameters.AddWithValue("@barangay", cmbBarangay.Text);
+            cmd.Parameters.AddWithValue("@category", cmbCategory.Text);
+            cmd.Parameters.AddWithValue("@training", cmbTrainings.Text);
+            cmd.Parameters.AddWithValue("@year", txtYear.Text);
+            cmd.Parameters.AddWithValue("@venue", txtVenue.Text);
+
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Data Updated Successfully!");
@@ -73,8 +83,15 @@ namespace MDRRMOTRMS
         {
             if (String.IsNullOrEmpty(txtSearch.Text))
             {
-                this.Controls.Clear();
-                this.InitializeComponent();
+                txtFirstname.Text = String.Empty;
+                txtLastname.Text = String.Empty;
+                dateTimePicker1.Text = String.Empty;
+                txtContactNum.Text = String.Empty;
+                cmbBarangay.Text = String.Empty;
+                cmbCategory.Text = String.Empty;
+                cmbTrainings.Text = String.Empty;
+                txtYear.Text = String.Empty;
+                txtVenue.Text = String.Empty;
             }
 
             else
@@ -100,6 +117,47 @@ namespace MDRRMOTRMS
             }
 
             con.Close();
+        }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSearch2_TextChanged(object sender, EventArgs e)
+        {
+            con.Open();
+            DataTable dt = new DataTable();
+            DataView dv = new DataView(dt);
+
+            //Check if SearchBox is Empty or Not
+            if (String.IsNullOrEmpty(txtSearch2.Text))
+            {
+                con.Close();
+                dataview();
+            }
+            else
+            {
+                dv.RowFilter = string.Format("[ID] like '%{0}%'", txtSearch2.Text);
+                dgView.DataSource = dv;
+                con.Close();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //Delete or Remove Data
+            con.Open();
+            OleDbCommand cmd = new OleDbCommand
+                (
+                    "Delete from tbl_trms where ID=" + txtSearch.Text + " ", con
+                );
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Data Deleted Successfully!");
         }
     }
 }
