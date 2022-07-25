@@ -54,11 +54,11 @@
             this.txtFirstname = new System.Windows.Forms.TextBox();
             this.panelDgview = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblSex = new System.Windows.Forms.Label();
+            this.cmbSex = new System.Windows.Forms.ComboBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cmbSex = new System.Windows.Forms.ComboBox();
-            this.lblSex = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -383,6 +383,28 @@
             this.panel2.Size = new System.Drawing.Size(1240, 226);
             this.panel2.TabIndex = 15;
             // 
+            // lblSex
+            // 
+            this.lblSex.AutoSize = true;
+            this.lblSex.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSex.Location = new System.Drawing.Point(475, 52);
+            this.lblSex.Name = "lblSex";
+            this.lblSex.Size = new System.Drawing.Size(31, 17);
+            this.lblSex.TabIndex = 34;
+            this.lblSex.Text = "Sex:";
+            // 
+            // cmbSex
+            // 
+            this.cmbSex.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbSex.FormattingEnabled = true;
+            this.cmbSex.Items.AddRange(new object[] {
+            "M",
+            "F"});
+            this.cmbSex.Location = new System.Drawing.Point(472, 72);
+            this.cmbSex.Name = "cmbSex";
+            this.cmbSex.Size = new System.Drawing.Size(63, 29);
+            this.cmbSex.TabIndex = 33;
+            // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.DodgerBlue;
@@ -416,28 +438,6 @@
             this.dateTimePicker1.TabIndex = 2;
             this.dateTimePicker1.TabStop = false;
             this.dateTimePicker1.Value = new System.DateTime(2022, 7, 25, 0, 0, 0, 0);
-            // 
-            // cmbSex
-            // 
-            this.cmbSex.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cmbSex.FormattingEnabled = true;
-            this.cmbSex.Items.AddRange(new object[] {
-            "M",
-            "F"});
-            this.cmbSex.Location = new System.Drawing.Point(472, 72);
-            this.cmbSex.Name = "cmbSex";
-            this.cmbSex.Size = new System.Drawing.Size(63, 29);
-            this.cmbSex.TabIndex = 33;
-            // 
-            // lblSex
-            // 
-            this.lblSex.AutoSize = true;
-            this.lblSex.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSex.Location = new System.Drawing.Point(475, 52);
-            this.lblSex.Name = "lblSex";
-            this.lblSex.Size = new System.Drawing.Size(31, 17);
-            this.lblSex.TabIndex = 34;
-            this.lblSex.Text = "Sex:";
             // 
             // AddRecord
             // 
