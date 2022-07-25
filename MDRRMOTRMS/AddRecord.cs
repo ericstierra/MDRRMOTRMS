@@ -32,7 +32,7 @@ namespace MDRRMOTRMS
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand
                     (
-                        "Insert into tbl_trms (Firstname,Lastname,Birthday,ContactNum,Barangay,Category,TrainingAcquired,YearAcquired,TrainingVenue)values('" + txtFirstname.Text + "','" + txtLastname.Text + "','" + dateTimePicker1.Text + "','" + txtContactNum.Text + "','" + cmbBarangay.Text + "','" + cmbCategory.Text + "','" + cmbTrainings.Text + "','" + txtYear.Text + "','" + txtVenue.Text + "')", con
+                        "Insert into tbl_trms (Firstname,Lastname,Sex,Birthday,ContactNum,Barangay,Category,TrainingAcquired,YearAcquired,TrainingVenue)values('" + txtFirstname.Text + "','" + txtLastname.Text + "','" + cmbSex.Text + "','" + dateTimePicker1.Text + "','" + txtContactNum.Text + "','" + cmbBarangay.Text + "','" + cmbCategory.Text + "','" + cmbTrainings.Text + "','" + txtYear.Text + "','" + txtVenue.Text + "')", con
                     );
 
                 cmd.ExecuteNonQuery();
@@ -63,11 +63,12 @@ namespace MDRRMOTRMS
             {
                 //Update Data
                 con.Open();
-                string query = "UPDATE tbl_trms SET Firstname = @firstname, Lastname = @lastname, Birthday = @bday, ContactNum = @contactnum, Barangay = @barangay, Category = @category, TrainingAcquired = @training, YearAcquired = @year, TrainingVenue = @venue WHERE [ID] = " + txtSearch.Text + " ";
+                string query = "UPDATE tbl_trms SET Firstname = @firstname, Lastname = @lastname, Sex = @sex, Birthday = @bday, ContactNum = @contactnum, Barangay = @barangay, Category = @category, TrainingAcquired = @training, YearAcquired = @year, TrainingVenue = @venue WHERE [ID] = " + txtSearch.Text + " ";
                 OleDbCommand cmd = new OleDbCommand(query, con);
 
                 cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text);
                 cmd.Parameters.AddWithValue("@lastname", txtLastname.Text);
+                cmd.Parameters.AddWithValue("@sex", cmbSex.Text);
                 cmd.Parameters.AddWithValue("@bday", dateTimePicker1.Value.ToString());
                 cmd.Parameters.AddWithValue("@contactnum", txtContactNum.Text);
                 cmd.Parameters.AddWithValue("@barangay", cmbBarangay.Text);
@@ -101,6 +102,7 @@ namespace MDRRMOTRMS
         {
             txtFirstname.Text = String.Empty;
             txtLastname.Text = String.Empty;
+            cmbSex.Text = String.Empty;
             dateTimePicker1.Text = String.Empty;
             txtContactNum.Text = String.Empty;
             cmbBarangay.Text = String.Empty;
@@ -115,15 +117,7 @@ namespace MDRRMOTRMS
         {
             if (String.IsNullOrEmpty(txtSearch.Text))
             {
-                txtFirstname.Text = String.Empty;
-                txtLastname.Text = String.Empty;
-                dateTimePicker1.Text = String.Empty;
-                txtContactNum.Text = String.Empty;
-                cmbBarangay.Text = String.Empty;
-                cmbCategory.Text = String.Empty;
-                cmbTrainings.Text = String.Empty;
-                txtYear.Text = String.Empty;
-                txtVenue.Text = String.Empty;
+                ClearTextBox();
             }
 
             else
@@ -138,6 +132,7 @@ namespace MDRRMOTRMS
                 {
                     txtFirstname.Text = dr["Firstname"].ToString();
                     txtLastname.Text = dr["Lastname"].ToString();
+                    cmbSex.Text = dr["Sex"].ToString();
                     dateTimePicker1.Text = dr["Birthday"].ToString();
                     txtContactNum.Text = dr["ContactNum"].ToString();
                     cmbBarangay.Text = dr["Barangay"].ToString();

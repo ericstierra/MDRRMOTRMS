@@ -47,10 +47,10 @@
             // 
             this.welcome.AutoSize = true;
             this.welcome.BackColor = System.Drawing.Color.Transparent;
-            this.welcome.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.welcome.Location = new System.Drawing.Point(68, 76);
+            this.welcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.welcome.Location = new System.Drawing.Point(19, 76);
             this.welcome.Name = "welcome";
-            this.welcome.Size = new System.Drawing.Size(474, 36);
+            this.welcome.Size = new System.Drawing.Size(555, 25);
             this.welcome.TabIndex = 6;
             this.welcome.Text = "MDRRMO Trainings - Records Management System";
             this.welcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
