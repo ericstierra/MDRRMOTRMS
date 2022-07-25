@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddRecord));
             this.txtLastname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,7 +45,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtYear = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgView = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -57,15 +52,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtFirstname = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.panelDgview = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtSearch2 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
-            this.panelDgview.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,10 +70,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(250, 48);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(248, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 21);
+            this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Lastname:";
             // 
@@ -91,11 +81,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(1040, 16);
+            this.label3.Location = new System.Drawing.Point(1019, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 13);
+            this.label3.Size = new System.Drawing.Size(124, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Type the ID # to edit:";
+            this.label3.Text = "Enter the ID # to update:";
             // 
             // txtSearch
             // 
@@ -110,30 +100,30 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(942, 48);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(940, 54);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 21);
+            this.label5.Size = new System.Drawing.Size(65, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Barangay:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(481, 48);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(479, 54);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 21);
+            this.label6.Size = new System.Drawing.Size(58, 17);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Age:";
+            this.label6.Text = "Birthday:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(700, 48);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(698, 54);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 21);
+            this.label7.Size = new System.Drawing.Size(67, 17);
             this.label7.TabIndex = 13;
             this.label7.Text = "Contact #:";
             // 
@@ -202,7 +192,9 @@
             this.cmbTrainings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbTrainings.FormattingEnabled = true;
             this.cmbTrainings.Items.AddRange(new object[] {
-            "Basic Life Support and Standard First-Aid"});
+            "Basic Life Support and Standard First-Aid",
+            "Community-Based Disaster Risk Reduction and Management (CBDRRM)",
+            "Basic Radio Communication"});
             this.cmbTrainings.Location = new System.Drawing.Point(250, 131);
             this.cmbTrainings.Name = "cmbTrainings";
             this.cmbTrainings.Size = new System.Drawing.Size(285, 29);
@@ -211,20 +203,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(250, 107);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(248, 113);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 21);
+            this.label4.Size = new System.Drawing.Size(113, 17);
             this.label4.TabIndex = 15;
             this.label4.Text = "Training Acquired:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(749, 107);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(747, 113);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 21);
+            this.label8.Size = new System.Drawing.Size(96, 17);
             this.label8.TabIndex = 18;
             this.label8.Text = "Training Venue:";
             // 
@@ -239,10 +231,10 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(563, 107);
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(561, 113);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(109, 21);
+            this.label9.Size = new System.Drawing.Size(92, 17);
             this.label9.TabIndex = 20;
             this.label9.Text = "Year Acquired:";
             // 
@@ -263,49 +255,6 @@
             this.label1.Size = new System.Drawing.Size(196, 25);
             this.label1.TabIndex = 21;
             this.label1.Text = "Add Training Record";
-            // 
-            // dgView
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.dgView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgView.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgView.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgView.GridColor = System.Drawing.Color.White;
-            this.dgView.Location = new System.Drawing.Point(20, 48);
-            this.dgView.Name = "dgView";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgView.RowHeadersVisible = false;
-            this.dgView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.dgView.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgView.RowTemplate.Height = 25;
-            this.dgView.Size = new System.Drawing.Size(1221, 386);
-            this.dgView.TabIndex = 13;
             // 
             // btnAdd
             // 
@@ -362,20 +311,20 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(24, 107);
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(22, 113);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 21);
+            this.label10.Size = new System.Drawing.Size(64, 17);
             this.label10.TabIndex = 26;
             this.label10.Text = "Category:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(24, 48);
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(22, 54);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(82, 21);
+            this.label11.Size = new System.Drawing.Size(67, 17);
             this.label11.TabIndex = 29;
             this.label11.Text = "Firstname:";
             // 
@@ -387,49 +336,17 @@
             this.txtFirstname.Size = new System.Drawing.Size(195, 29);
             this.txtFirstname.TabIndex = 0;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(8, 4);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(240, 25);
-            this.label12.TabIndex = 30;
-            this.label12.Text = "List of Trained Individuals";
-            // 
             // panelDgview
             // 
             this.panelDgview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.panelDgview.Controls.Add(this.label14);
-            this.panelDgview.Controls.Add(this.txtSearch2);
-            this.panelDgview.Controls.Add(this.label12);
             this.panelDgview.Location = new System.Drawing.Point(12, 12);
             this.panelDgview.Name = "panelDgview";
             this.panelDgview.Size = new System.Drawing.Size(1240, 425);
             this.panelDgview.TabIndex = 14;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(989, 12);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(117, 13);
-            this.label14.TabIndex = 32;
-            this.label14.Text = "Search using Firstname:";
-            // 
-            // txtSearch2
-            // 
-            this.txtSearch2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSearch2.Location = new System.Drawing.Point(1114, 6);
-            this.txtSearch2.Name = "txtSearch2";
-            this.txtSearch2.Size = new System.Drawing.Size(115, 23);
-            this.txtSearch2.TabIndex = 32;
-            this.txtSearch2.TextChanged += new System.EventHandler(this.txtSearch2_TextChanged);
-            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtSearch);
@@ -480,7 +397,7 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(194, 27);
             this.dateTimePicker1.TabIndex = 2;
             this.dateTimePicker1.TabStop = false;
-            this.dateTimePicker1.Value = new System.DateTime(2022, 7, 22, 13, 47, 56, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2022, 7, 25, 0, 0, 0, 0);
             // 
             // AddRecord
             // 
@@ -488,15 +405,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.dgView);
             this.Controls.Add(this.panelDgview);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddRecord";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddRecord";
             this.Load += new System.EventHandler(this.AddRecord_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgView)).EndInit();
-            this.panelDgview.ResumeLayout(false);
-            this.panelDgview.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -521,7 +436,6 @@
         private Label label9;
         private TextBox txtYear;
         private Label label1;
-        private DataGridView dgView;
         private Button btnAdd;
         private Button btnEdit;
         private Button btnDelete;
@@ -529,12 +443,9 @@
         private Label label10;
         private Label label11;
         private TextBox txtFirstname;
-        private Label label12;
         private Panel panelDgview;
         private Panel panel2;
         private DateTimePicker dateTimePicker1;
         private Label label13;
-        private Label label14;
-        private TextBox txtSearch2;
     }
 }

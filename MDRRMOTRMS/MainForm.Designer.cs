@@ -146,6 +146,7 @@
             this.Controls.Add(this.secretLogin);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MDRRMO Trainings - Records Management System (RMS)";

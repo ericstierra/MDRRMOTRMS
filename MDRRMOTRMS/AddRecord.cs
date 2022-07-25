@@ -23,60 +23,92 @@ namespace MDRRMOTRMS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            con.Open();
-            OleDbCommand cmd = new OleDbCommand
-                (
-                    "Insert into tbl_trms (Firstname,Lastname,Birthday,ContactNum,Barangay,Category,TrainingAcquired,YearAcquired,TrainingVenue)values('" + txtFirstname.Text + "','" + txtLastname.Text + "','" + dateTimePicker1.Text + "','" + txtContactNum.Text + "','" + cmbBarangay.Text + "','" + cmbCategory.Text + "','" + cmbTrainings.Text + "','" + txtYear.Text + "','" + txtVenue.Text + "')", con
-                );
+            if (String.IsNullOrEmpty(txtYear.Text))
+            {
+                MessageBox.Show("Please complete all the details required!");
+            }
+            else
+            {
+                con.Open();
+                OleDbCommand cmd = new OleDbCommand
+                    (
+                        "Insert into tbl_trms (Firstname,Lastname,Birthday,ContactNum,Barangay,Category,TrainingAcquired,YearAcquired,TrainingVenue)values('" + txtFirstname.Text + "','" + txtLastname.Text + "','" + dateTimePicker1.Text + "','" + txtContactNum.Text + "','" + cmbBarangay.Text + "','" + cmbCategory.Text + "','" + cmbTrainings.Text + "','" + txtYear.Text + "','" + txtVenue.Text + "')", con
+                    );
 
-            cmd.ExecuteNonQuery();
-            this.Controls.Clear();
-            this.InitializeComponent();
-            MessageBox.Show("Data Successfully Recorded!");
-            con.Close();
-            
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Data Successfully Recorded!");
+                con.Close();
+
+                ClearTextBox();
+                ReloadDataGrid();
+            }
         }
-
-        private void dataview()
-        {
-            con.Open();
-            OleDbDataAdapter adapt = new OleDbDataAdapter
-                (
-                    "Select * from tbl_trms ORDER by [YearAcquired] desc", con
-                );
-            DataTable dt = new DataTable();
-            adapt.Fill(dt);
-            dgView.DataSource = dt;
-            con.Close();
-        }
-
 
         private void AddRecord_Load(object sender, EventArgs e)
         {
-            dataview();
-            //dgView.Columns["ID"].Visible = false;
+
+            DataTableView frm1 = new DataTableView() { TopLevel = false, TopMost = true };
+            this.panelDgview.Controls.Clear();
+            this.panelDgview.Controls.Add(frm1);
+            frm1.Show();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            //Update Data
-            con.Open();
-            string query = "UPDATE tbl_trms SET Firstname = @firstname, Lastname = @lastname, Birthday = @bday, ContactNum = @contactnum, Barangay = @barangay, Category = @category, TrainingAcquired = @training, YearAcquired = @year, TrainingVenue = @venue WHERE [ID] = "+txtSearch.Text+" ";
-            OleDbCommand cmd = new OleDbCommand(query, con);
+            if (String.IsNullOrEmpty(txtSearch.Text))
+            {
+                MessageBox.Show("ID is required to . Please try again!");
+            }
+            else
+            {
+                //Update Data
+                con.Open();
+                string query = "UPDATE tbl_trms SET Firstname = @firstname, Lastname = @lastname, Birthday = @bday, ContactNum = @contactnum, Barangay = @barangay, Category = @category, TrainingAcquired = @training, YearAcquired = @year, TrainingVenue = @venue WHERE [ID] = " + txtSearch.Text + " ";
+                OleDbCommand cmd = new OleDbCommand(query, con);
 
-            cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text);
-            cmd.Parameters.AddWithValue("@lastname", txtLastname.Text);
-            cmd.Parameters.AddWithValue("@bday", dateTimePicker1.Value.ToString());
-            cmd.Parameters.AddWithValue("@contactnum", txtContactNum.Text);
-            cmd.Parameters.AddWithValue("@barangay", cmbBarangay.Text);
-            cmd.Parameters.AddWithValue("@category", cmbCategory.Text);
-            cmd.Parameters.AddWithValue("@training", cmbTrainings.Text);
-            cmd.Parameters.AddWithValue("@year", txtYear.Text);
-            cmd.Parameters.AddWithValue("@venue", txtVenue.Text);
+                cmd.Parameters.AddWithValue("@firstname", txtFirstname.Text);
+                cmd.Parameters.AddWithValue("@lastname", txtLastname.Text);
+                cmd.Parameters.AddWithValue("@bday", dateTimePicker1.Value.ToString());
+                cmd.Parameters.AddWithValue("@contactnum", txtContactNum.Text);
+                cmd.Parameters.AddWithValue("@barangay", cmbBarangay.Text);
+                cmd.Parameters.AddWithValue("@category", cmbCategory.Text);
+                cmd.Parameters.AddWithValue("@training", cmbTrainings.Text);
+                cmd.Parameters.AddWithValue("@year", txtYear.Text);
+                cmd.Parameters.AddWithValue("@venue", txtVenue.Text);
 
-            cmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Data Updated Successfully!");
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Data Updated Successfully!");
+
+                DataTableView frm1 = new DataTableView() { TopLevel = false, TopMost = true };
+                this.panelDgview.Controls.Clear();
+                this.panelDgview.Controls.Add(frm1);
+                frm1.Show();
+
+                ReloadDataGrid();
+                ClearTextBox();
+            }
+        }
+
+        private void ReloadDataGrid()
+        {
+            DataTableView frm1 = new DataTableView() { TopLevel = false, TopMost = true };
+            this.panelDgview.Controls.Clear();
+            this.panelDgview.Controls.Add(frm1);
+            frm1.Show();
+        }
+        private void ClearTextBox()
+        {
+            txtFirstname.Text = String.Empty;
+            txtLastname.Text = String.Empty;
+            dateTimePicker1.Text = String.Empty;
+            txtContactNum.Text = String.Empty;
+            cmbBarangay.Text = String.Empty;
+            cmbCategory.Text = String.Empty;
+            cmbTrainings.Text = String.Empty;
+            txtYear.Text = String.Empty;
+            txtVenue.Text = String.Empty;
+            txtSearch.Text = String.Empty;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -127,37 +159,33 @@ namespace MDRRMOTRMS
             }
         }
 
-        private void txtSearch2_TextChanged(object sender, EventArgs e)
-        {
-            con.Open();
-            DataTable dt = new DataTable();
-            DataView dv = new DataView(dt);
-
-            //Check if SearchBox is Empty or Not
-            if (String.IsNullOrEmpty(txtSearch2.Text))
-            {
-                con.Close();
-                dataview();
-            }
-            else
-            {
-                dv.RowFilter = string.Format("[ID] like '%{0}%'", txtSearch2.Text);
-                dgView.DataSource = dv;
-                con.Close();
-            }
-        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //Delete or Remove Data
-            con.Open();
-            OleDbCommand cmd = new OleDbCommand
-                (
-                    "Delete from tbl_trms where ID=" + txtSearch.Text + " ", con
-                );
-            cmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Data Deleted Successfully!");
+            if (String.IsNullOrEmpty(txtSearch.Text))
+            {
+                MessageBox.Show("Search box is empty. Please try again!");
+            }
+            else
+            {
+                //Delete or Remove Data
+                con.Open();
+                OleDbCommand cmd = new OleDbCommand
+                    (
+                        "Delete from tbl_trms where ID=" + txtSearch.Text + " ", con
+                    );
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Data Deleted Successfully!");
+
+                ReloadDataGrid();
+                ClearTextBox();
+            }
+        }
+
+        private void dgView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
