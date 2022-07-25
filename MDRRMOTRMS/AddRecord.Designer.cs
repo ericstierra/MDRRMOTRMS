@@ -54,6 +54,7 @@
             this.txtFirstname = new System.Windows.Forms.TextBox();
             this.panelDgview = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
@@ -260,9 +261,9 @@
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAdd.Location = new System.Drawing.Point(807, 186);
+            this.btnAdd.Location = new System.Drawing.Point(769, 186);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(136, 32);
+            this.btnAdd.Size = new System.Drawing.Size(112, 32);
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -272,9 +273,9 @@
             // 
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEdit.Location = new System.Drawing.Point(949, 186);
+            this.btnEdit.Location = new System.Drawing.Point(891, 186);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(126, 32);
+            this.btnEdit.Size = new System.Drawing.Size(102, 32);
             this.btnEdit.TabIndex = 10;
             this.btnEdit.Text = "Update";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -284,9 +285,9 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDelete.Location = new System.Drawing.Point(1080, 186);
+            this.btnDelete.Location = new System.Drawing.Point(1104, 186);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(126, 32);
+            this.btnDelete.Size = new System.Drawing.Size(102, 32);
             this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -338,7 +339,7 @@
             // 
             // panelDgview
             // 
-            this.panelDgview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.panelDgview.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panelDgview.Location = new System.Drawing.Point(12, 12);
             this.panelDgview.Name = "panelDgview";
             this.panelDgview.Size = new System.Drawing.Size(1240, 425);
@@ -346,7 +347,8 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.Controls.Add(this.btnClear);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtSearch);
@@ -376,6 +378,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1240, 226);
             this.panel2.TabIndex = 15;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnClear.Location = new System.Drawing.Point(999, 186);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(102, 32);
+            this.btnClear.TabIndex = 32;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // label13
             // 
@@ -447,5 +461,6 @@
         private Panel panel2;
         private DateTimePicker dateTimePicker1;
         private Label label13;
+        private Button btnClear;
     }
 }

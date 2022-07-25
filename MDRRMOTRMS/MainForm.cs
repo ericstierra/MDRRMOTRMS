@@ -19,6 +19,13 @@ namespace MDRRMOTRMS
             txtUsername.Text = String.Empty;
             txtPass.Text = String.Empty;
             MessageBox.Show("Login Details are incorrect. Please try again!");
+            ClearTextBox();
         }
+
+        private void ClearTextBox()
+        {
+            txtPass.Text = String.Empty;
+            txtUsername.Text = String.Empty;
+                    }
     }
 }

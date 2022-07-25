@@ -47,19 +47,19 @@
             // 
             this.welcome.AutoSize = true;
             this.welcome.BackColor = System.Drawing.Color.Transparent;
-            this.welcome.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.welcome.Location = new System.Drawing.Point(41, 79);
+            this.welcome.Font = new System.Drawing.Font("Dubai", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.welcome.Location = new System.Drawing.Point(68, 76);
             this.welcome.Name = "welcome";
-            this.welcome.Size = new System.Drawing.Size(515, 30);
+            this.welcome.Size = new System.Drawing.Size(474, 36);
             this.welcome.TabIndex = 6;
             this.welcome.Text = "MDRRMO Trainings - Records Management System";
             this.welcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLogin.Location = new System.Drawing.Point(233, 245);
+            this.btnLogin.Location = new System.Drawing.Point(228, 245);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(149, 27);
             this.btnLogin.TabIndex = 1;
@@ -70,7 +70,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MDRRMOTRMS.Properties.Resources.ATIMONAN_SEAL;
-            this.pictureBox1.Location = new System.Drawing.Point(247, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(233, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(71, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -80,7 +80,7 @@
             // secretLogin
             // 
             this.secretLogin.Image = ((System.Drawing.Image)(resources.GetObject("secretLogin.Image")));
-            this.secretLogin.Location = new System.Drawing.Point(317, 26);
+            this.secretLogin.Location = new System.Drawing.Point(303, 15);
             this.secretLogin.Name = "secretLogin";
             this.secretLogin.Size = new System.Drawing.Size(71, 58);
             this.secretLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -93,6 +93,9 @@
             this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelMain.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelMain.Controls.Add(this.secretLogin);
+            this.panelMain.Controls.Add(this.pictureBox1);
             this.panelMain.Controls.Add(this.welcome);
             this.panelMain.Controls.Add(this.label2);
             this.panelMain.Controls.Add(this.label1);
@@ -125,17 +128,17 @@
             // txtPass
             // 
             this.txtPass.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPass.Location = new System.Drawing.Point(161, 203);
+            this.txtPass.Location = new System.Drawing.Point(189, 203);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(290, 27);
+            this.txtPass.Size = new System.Drawing.Size(221, 27);
             this.txtPass.TabIndex = 3;
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtUsername.Location = new System.Drawing.Point(161, 147);
+            this.txtUsername.Location = new System.Drawing.Point(189, 147);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(290, 27);
+            this.txtUsername.Size = new System.Drawing.Size(221, 27);
             this.txtUsername.TabIndex = 2;
             // 
             // MainForm
@@ -143,8 +146,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 307);
-            this.Controls.Add(this.secretLogin);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";

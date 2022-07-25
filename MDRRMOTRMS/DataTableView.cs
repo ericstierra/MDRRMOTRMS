@@ -15,6 +15,7 @@ namespace MDRRMOTRMS
     public partial class DataTableView : Form
     {
         OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\SystemsDB\trms_db.accdb");
+        DataTable dt;
         public DataTableView()
         {
             InitializeComponent();
@@ -27,10 +28,29 @@ namespace MDRRMOTRMS
                 (
                     "Select * from tbl_trms ORDER by YearAcquired desc", con
                 );
-            DataTable dt = new DataTable();
+            dt = new DataTable();
             adapt.Fill(dt);
             dgView.DataSource = dt;
             con.Close();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            con.Open();
+            DataView dv = new DataView(dt);
+
+            //Check if SearchBox is Empty or Not
+            if (String.IsNullOrEmpty(txtSearch.Text))
+            {
+                con.Close();
+                dataview();
+            }
+            else
+            {
+                dv.RowFilter = string.Format("Firstname like '%{0}%'", txtSearch.Text);
+                dgView.DataSource = dv;
+                con.Close();
+            }
         }
 
         private void DataTableView_Load(object sender, EventArgs e)
