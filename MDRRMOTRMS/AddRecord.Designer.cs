@@ -443,7 +443,7 @@
             // 
             // btnDashboard
             // 
-            this.btnDashboard.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnDashboard.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDashboard.Location = new System.Drawing.Point(12, 11);
             this.btnDashboard.Name = "btnDashboard";
@@ -451,10 +451,11 @@
             this.btnDashboard.TabIndex = 35;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // btnViewRec
             // 
-            this.btnViewRec.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnViewRec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnViewRec.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnViewRec.Location = new System.Drawing.Point(137, 11);
             this.btnViewRec.Name = "btnViewRec";
@@ -462,6 +463,7 @@
             this.btnViewRec.TabIndex = 36;
             this.btnViewRec.Text = "View Records";
             this.btnViewRec.UseVisualStyleBackColor = false;
+            this.btnViewRec.Click += new System.EventHandler(this.btnViewRec_Click);
             // 
             // btnExit
             // 

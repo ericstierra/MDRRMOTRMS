@@ -25,12 +25,18 @@ namespace MDRRMOTRMS
             con.Open();
             OleDbCommand blssfa = new OleDbCommand("SELECT COUNT(*) from tbl_trms WHERE TrainingAcquired = 'Basic Life Support and Standard First-Aid' ", con);
             OleDbCommand cbdrrm = new OleDbCommand("SELECT count(*) from tbl_trms WHERE TrainingAcquired = 'Community-Based Disaster Risk Reduction and Management (CBDRRM)'", con);
+            OleDbCommand male = new OleDbCommand("SELECT count(*) from tbl_trms WHERE Sex = 'M'", con);
+            OleDbCommand female = new OleDbCommand("SELECT count(*) from tbl_trms WHERE Sex = 'F'", con);
             int totalBLSSFA = (int)blssfa.ExecuteScalar();
             int totalCBDRRM = (int)cbdrrm.ExecuteScalar();
+            int totalMale = (int)male.ExecuteScalar();
+            int totalFemale = (int)female.ExecuteScalar();
             con.Close();
 
             dataBLS.Text = totalBLSSFA.ToString();
             dataCBDRRM.Text = totalCBDRRM.ToString();
+            dataMale.Text =totalMale.ToString();
+            dataFemale.Text = totalFemale.ToString();
         }
     }
 }

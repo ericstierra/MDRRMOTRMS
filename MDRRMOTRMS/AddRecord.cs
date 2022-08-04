@@ -98,6 +98,13 @@ namespace MDRRMOTRMS
             this.panelDgview.Controls.Add(frm1);
             frm1.Show();
         }
+        private void ReloadDashboard()
+        {
+            Dashboard frm1 = new Dashboard() { TopLevel = false, TopMost = true };
+            this.panelDgview.Controls.Clear();
+            this.panelDgview.Controls.Add(frm1);
+            frm1.Show();
+        }
         private void ClearTextBox()
         {
             txtFirstname.Text = String.Empty;
@@ -201,6 +208,16 @@ namespace MDRRMOTRMS
         private void panelDgview_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            ReloadDashboard();
+        }
+
+        private void btnViewRec_Click(object sender, EventArgs e)
+        {
+            ReloadDataGrid();
         }
     }
 }
