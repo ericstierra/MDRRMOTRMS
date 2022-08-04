@@ -56,9 +56,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblSex = new System.Windows.Forms.Label();
             this.cmbSex = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnClear = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnViewRec = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,7 +87,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(1019, 16);
+            this.label3.Location = new System.Drawing.Point(1019, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 13);
             this.label3.TabIndex = 5;
@@ -93,7 +96,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSearch.Location = new System.Drawing.Point(1155, 11);
+            this.txtSearch.Location = new System.Drawing.Point(1155, 18);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(51, 23);
             this.txtSearch.TabIndex = 12;
@@ -252,20 +255,23 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(23, 8);
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(18, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(196, 25);
             this.label1.TabIndex = 21;
             this.label1.Text = "Add Training Record";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAdd.Location = new System.Drawing.Point(769, 186);
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdd.Location = new System.Drawing.Point(884, 643);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(112, 32);
+            this.btnAdd.Size = new System.Drawing.Size(92, 26);
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -273,11 +279,11 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEdit.Location = new System.Drawing.Point(891, 186);
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEdit.Location = new System.Drawing.Point(986, 643);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(102, 32);
+            this.btnEdit.Size = new System.Drawing.Size(82, 26);
             this.btnEdit.TabIndex = 10;
             this.btnEdit.Text = "Update";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -285,11 +291,11 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDelete.Location = new System.Drawing.Point(1104, 186);
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDelete.Location = new System.Drawing.Point(1170, 643);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(102, 32);
+            this.btnDelete.Size = new System.Drawing.Size(82, 26);
             this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -342,18 +348,17 @@
             // panelDgview
             // 
             this.panelDgview.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panelDgview.Location = new System.Drawing.Point(12, 12);
+            this.panelDgview.Location = new System.Drawing.Point(12, 39);
             this.panelDgview.Name = "panelDgview";
-            this.panelDgview.Size = new System.Drawing.Size(1240, 425);
+            this.panelDgview.Size = new System.Drawing.Size(1240, 398);
             this.panelDgview.TabIndex = 14;
+            this.panelDgview.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDgview_Paint);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel2.Controls.Add(this.lblSex);
             this.panel2.Controls.Add(this.cmbSex);
-            this.panel2.Controls.Add(this.btnClear);
-            this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.dateTimePicker1);
@@ -363,13 +368,10 @@
             this.panel2.Controls.Add(this.txtVenue);
             this.panel2.Controls.Add(this.txtYear);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.btnDelete);
             this.panel2.Controls.Add(this.cmbTrainings);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.cmbBarangay);
-            this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.txtContactNum);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label4);
@@ -378,9 +380,9 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(12, 443);
+            this.panel2.Location = new System.Drawing.Point(12, 454);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1240, 226);
+            this.panel2.Size = new System.Drawing.Size(1240, 175);
             this.panel2.TabIndex = 15;
             // 
             // lblSex
@@ -405,28 +407,6 @@
             this.cmbSex.Size = new System.Drawing.Size(63, 29);
             this.cmbSex.TabIndex = 33;
             // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnClear.Location = new System.Drawing.Point(999, 186);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(102, 32);
-            this.btnClear.TabIndex = 32;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(24, 201);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(332, 15);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "MDRRMO Trainings - Record Management System (RMS) 2022";
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -439,13 +419,77 @@
             this.dateTimePicker1.TabStop = false;
             this.dateTimePicker1.Value = new System.DateTime(2022, 7, 25, 0, 0, 0, 0);
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnClear.Location = new System.Drawing.Point(1078, 643);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(82, 26);
+            this.btnClear.TabIndex = 32;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(12, 649);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(332, 15);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "MDRRMO Trainings - Record Management System (RMS) 2022";
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDashboard.Location = new System.Drawing.Point(12, 11);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(112, 22);
+            this.btnDashboard.TabIndex = 35;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            // 
+            // btnViewRec
+            // 
+            this.btnViewRec.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnViewRec.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnViewRec.Location = new System.Drawing.Point(137, 11);
+            this.btnViewRec.Name = "btnViewRec";
+            this.btnViewRec.Size = new System.Drawing.Size(112, 22);
+            this.btnViewRec.TabIndex = 36;
+            this.btnViewRec.Text = "View Records";
+            this.btnViewRec.UseVisualStyleBackColor = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnExit.Location = new System.Drawing.Point(1200, 11);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(52, 22);
+            this.btnExit.TabIndex = 37;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // AddRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnViewRec);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnDashboard);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.panelDgview);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddRecord";
@@ -455,6 +499,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -490,5 +535,8 @@
         private Button btnClear;
         private Label lblSex;
         private ComboBox cmbSex;
+        private Button btnDashboard;
+        private Button btnViewRec;
+        private Button btnExit;
     }
 }

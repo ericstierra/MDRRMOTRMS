@@ -47,7 +47,7 @@ namespace MDRRMOTRMS
         private void AddRecord_Load(object sender, EventArgs e)
         {
 
-            DataTableView frm1 = new DataTableView() { TopLevel = false, TopMost = true };
+            Dashboard frm1 = new Dashboard() { TopLevel = false, TopMost = true };
             this.panelDgview.Controls.Clear();
             this.panelDgview.Controls.Add(frm1);
             frm1.Show();
@@ -186,6 +186,21 @@ namespace MDRRMOTRMS
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearTextBox();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelDgview_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
