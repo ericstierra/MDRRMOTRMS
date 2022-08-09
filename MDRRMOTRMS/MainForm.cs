@@ -27,5 +27,10 @@ namespace MDRRMOTRMS
             txtPass.Text = String.Empty;
             txtUsername.Text = String.Empty;
                     }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
