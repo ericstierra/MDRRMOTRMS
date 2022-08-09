@@ -58,7 +58,6 @@
             this.cmbSex = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnClear = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnViewRec = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -267,11 +266,12 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAdd.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.Location = new System.Drawing.Point(884, 643);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(92, 26);
+            this.btnAdd.Size = new System.Drawing.Size(92, 21);
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -280,10 +280,11 @@
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEdit.Location = new System.Drawing.Point(986, 643);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(82, 26);
+            this.btnEdit.Size = new System.Drawing.Size(82, 21);
             this.btnEdit.TabIndex = 10;
             this.btnEdit.Text = "Update";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -292,10 +293,11 @@
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDelete.Location = new System.Drawing.Point(1170, 643);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(82, 26);
+            this.btnDelete.Size = new System.Drawing.Size(82, 21);
             this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -356,7 +358,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.Controls.Add(this.lblSex);
             this.panel2.Controls.Add(this.cmbSex);
             this.panel2.Controls.Add(this.label3);
@@ -380,7 +382,7 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(12, 454);
+            this.panel2.Location = new System.Drawing.Point(12, 445);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1240, 175);
             this.panel2.TabIndex = 15;
@@ -422,28 +424,20 @@
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClear.Location = new System.Drawing.Point(1078, 643);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(82, 26);
+            this.btnClear.Size = new System.Drawing.Size(82, 21);
             this.btnClear.TabIndex = 32;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(12, 649);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(332, 15);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "MDRRMO Trainings - Record Management System (RMS) 2022";
-            // 
             // btnDashboard
             // 
             this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnDashboard.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDashboard.Location = new System.Drawing.Point(12, 11);
             this.btnDashboard.Name = "btnDashboard";
@@ -456,6 +450,7 @@
             // btnViewRec
             // 
             this.btnViewRec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnViewRec.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnViewRec.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnViewRec.Location = new System.Drawing.Point(137, 11);
             this.btnViewRec.Name = "btnViewRec";
@@ -468,12 +463,13 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnExit.Location = new System.Drawing.Point(1200, 11);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(52, 22);
             this.btnExit.TabIndex = 37;
-            this.btnExit.Text = "Exit";
+            this.btnExit.Text = "Close";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -483,7 +479,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnViewRec);
@@ -501,7 +496,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -533,7 +527,6 @@
         private Panel panelDgview;
         private Panel panel2;
         private DateTimePicker dateTimePicker1;
-        private Label label13;
         private Button btnClear;
         private Label lblSex;
         private ComboBox cmbSex;

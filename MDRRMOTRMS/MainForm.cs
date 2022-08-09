@@ -32,5 +32,17 @@ namespace MDRRMOTRMS
         {
 
         }
+
+        private void secretLogin_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void secreLoginx_Click(object sender, EventArgs e)
+        {
+            //this.Hide();
+            AddRecord frm2 = new AddRecord();
+            frm2.Show();
+        }
     }
 }

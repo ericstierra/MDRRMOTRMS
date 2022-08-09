@@ -197,7 +197,8 @@ namespace MDRRMOTRMS
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            this.Hide();
+            //System.Windows.Forms.Application.Exit();
         }
 
         private void label1_Click(object sender, EventArgs e)
